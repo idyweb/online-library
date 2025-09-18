@@ -27,6 +27,14 @@ from app.schemas.book import (
     BookUpdate,
     BookResponse,
 )
+from app.schemas.reading import (
+    ReadingProgressCreate,
+    ReadingProgressUpdate,
+    ReadingProgressResponse,
+    CurrentlyReadingResponse,
+    ReadingHistoryResponse,
+    BookReadingStatsResponse,
+)
 
 __all__ = [
     # Auth schemas
@@ -45,6 +53,13 @@ __all__ = [
     "AuthorResponse",
     # Book schemas
     "BookCreate",
-    "BookUpdate",
+    "BookUpdate", 
     "BookResponse",
+    # Reading schemas
+    "ReadingProgressCreate",
+    "ReadingProgressUpdate",
+    "ReadingProgressResponse",
+    "CurrentlyReadingResponse",
+    "ReadingHistoryResponse",
+    "BookReadingStatsResponse",
 ]
