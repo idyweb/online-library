@@ -192,6 +192,7 @@ Reading Features:
   - Author model extending user functionality for publishers
   - Book model for book metadata and file management
   - ReadingProgress model for tracking user reading progress
+- **Testing Framework**: Comprehensive pytest test suite with unit and integration tests
 - **Development Tools**: Pre-commit hooks, type checking, code formatting
 - **Documentation**: Comprehensive README with project plan
 
