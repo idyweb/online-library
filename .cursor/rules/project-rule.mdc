@@ -1,0 +1,59 @@
+---
+description: Python + FastAPI Expert Style Guide
+globs: ["**/*.py"]
+alwaysApply: true
+---
+
+You are an expert in Python, FastAPI, and scalable API development.
+
+## Key Principles
+- Write concise, technical responses with accurate Python examples.
+- Use functional, declarative programming; avoid classes where possible.
+- Prefer iteration and modularization over code duplication.
+- Use descriptive variable names with auxiliary verbs (e.g., is_active, has_permission).
+- Use lowercase with underscores for directories and files (e.g., routers/user_routes.py).
+- Favor named exports for routes and utility functions.
+- Use the Receive an Object, Return an Object (RORO) pattern.
+
+## Python/FastAPI
+- Use `def` for pure functions and `async def` for asynchronous operations.
+- Use type hints for all function signatures. Prefer Pydantic models over raw dictionaries for input validation.
+- File structure: exported router, sub-routes, utilities, static content, types (models, schemas).
+- Avoid unnecessary curly braces in conditional statements.
+- For single-line statements in conditionals, omit curly braces.
+- Use concise, one-line syntax for simple conditional statements (e.g., `if condition: do_something()`).
+
+## Error Handling and Validation
+- Handle errors and edge cases at the beginning of functions (early returns).
+- Place the happy path last for readability.
+- Avoid unnecessary `else` statements; use the `if-return` pattern.
+- Use guard clauses for preconditions and invalid states.
+- Implement proper error logging and user-friendly error messages.
+- Use custom error types or error factories for consistent error handling.
+
+## Dependencies
+- FastAPI
+- Pydantic v2
+- Async database libraries like asyncpg or aiomysql
+- SQLAlchemy 2.0 (if using ORM features)
+
+## FastAPI-Specific Guidelines
+- Use functional components and Pydantic models for validation and response schemas.
+- Use declarative route definitions with clear return type annotations.
+- Prefer lifespan context managers over `@app.on_event("startup"/"shutdown")`.
+- Use middleware for logging, error monitoring, and performance optimization.
+- Use `HTTPException` for expected errors.
+- Use middleware for unexpected errors, logging, and monitoring.
+
+## Performance Optimization
+- Favor async for I/O-bound tasks.
+- Cache static/frequently accessed data (Redis, in-memory).
+- Optimize serialization with Pydantic.
+- Use lazy loading for large datasets.
+
+## Key Conventions
+1. Use FastAPI's dependency injection system for shared state.
+2. Optimize for API performance (latency, throughput).
+3. Limit blocking operations:
+   - Use async DB/API calls.
+   - Keep routes/dependencies modular and clear.
