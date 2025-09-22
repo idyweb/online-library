@@ -313,7 +313,8 @@ cp .env.example .env
 # Run database migrations
 alembic upgrade head
 
-# Start the development server
+# Start the development server (src/ layout)
+export PYTHONPATH=src
 uvicorn app.main:app --reload
 ```
 
@@ -365,3 +366,17 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ---
 
 **Ready to revolutionize digital reading!** 🚀📚
+
+## 🤖 AI Usage Notes
+
+- **Assistant**: Cursor AI in-IDE copilot for scaffolding routers, services, and tests.
+- **Context strategies**: Provided OpenAPI-like endpoint plan, database schema, and file tree to guide completions.
+- **Documentation help**: Used AI to draft and revise this README and improve docstrings.
+- **Commit messages**: Prefer AI-generated, conventional commits via IDE integration.
+
+## 🧠 Evidence of AI Workflows
+
+- **API-aware generation**: Prompted AI using the planned endpoints to scaffold `routers/auth.py`, `routers/books.py`, and validation in `schemas/*`.
+- **Scaffold from IDE**: In-IDE suggestions created boilerplate for `services/*` and `tests/integration/*` which were then refined.
+- **AI code review**: Performed pre-push reviews in the IDE, catching error handling gaps and improving guard clauses.
+- **Docs iteration**: Asked assistant to tighten setup steps, add PYTHONPATH note for `src/` layout, and document AI usage.
